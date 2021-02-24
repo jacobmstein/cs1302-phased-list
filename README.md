@@ -123,7 +123,8 @@ from start to finish.
 ### Suggested Reading
 
 * [Interfaces Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/interfaces/interfaces.md)
-* [API Documentation for `StringList`](http://csweb.cs.uga.edu/~mec/cs1302/listadt-api/)
+* [API Documentation for Phase 1 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html)
+* [API Documentation for Phase 2 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/2/index.html)
 * [ADTS and Lists Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/adt-and-links/adt-and-links.md)
 
 ## Project Requirements & Grading
