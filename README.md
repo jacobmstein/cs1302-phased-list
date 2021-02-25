@@ -139,7 +139,8 @@ For this project, you are required to create two different classes that
 implement the same interface via a common abstract parent. While the specific 
 details are listed later in this document, the following diagram illustrates the 
 general relationship between your classes and the interface. The package `cs1302.adt`
-is provided for you in the `phase1.jar` file. You do not have access to the source
+is provided for you in the `phase1.jar` file which is included in the download for the
+project (details later). You do not have access to the source
 code. However, you do have access to the _byte code_ which means you can still use
 both `StringList` and `Node` in your code. Note that `BaseStringList` depends on
 `StringList` (since it implements it) and `LinkedStringList` depends on `Node`.
@@ -664,6 +665,7 @@ Below are some frequently asked questions related to this project.
    reduce the redundancy you see in the example above. Your test code does not need
    to look like what we provided; it's just an illustrative example.
    
+<!--   
 1. **<a id="abstract-parent"/>How can I remove redundancy between my two implementations of the interface?**
 
    You may find yourself implementing a method the exact same way in both classes. This is an
@@ -678,6 +680,7 @@ Below are some frequently asked questions related to this project.
    from the diagram for brevity):
 
    ![UML Diagram 2](listadt_uml2_good.png)
+-->
 
 1. **What is `phase1.jar`?**
 
