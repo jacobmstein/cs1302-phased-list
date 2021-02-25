@@ -423,28 +423,47 @@ $ git pull
 If you have any problems with these download procedures, then please contact
 your instructor.
 
+## ListADT Testing
+
+We have provided an oracle class (`cs1302.oracle.OracleStringList`) that you can instantiate and use
+in your driver program. The oracle will allow you to run your tests using a trusted implementation of
+`StringList` to see the expected output of your tests.
+
+Here is an example `Driver` class that us set up to run the test cases with all three implementation. You would just need
+to uncomment the implementation you wanted to use:
+
+```java
+package cs1302.p2;
+
+import cs1302.adt.StringList;
+import cs1302.oracle.OracleStringList;
+
+public class Driver {
+    public static void main(String[] args) {
+        StringList sl;
+
+        // To test what the output is for your code, you can use ArrayStringList or LinkedStringList:
+	// sl = new OracleStringList(); // uncomment to run the test cases using the oracle.
+	// sl = new ArrayStringList(); // uncomment to run the test cases using your array implementation
+	// sl = new LinkedStringList(); // uncomment to run the test cases using your linked implementation.
+	
+        // Test isEmpty on an empty list
+        if (sl.isEmpty()) {
+            System.out.println("isEmpty: Test Passed");
+        } else {
+            System.out.println("isEmpty: Test Failed");
+            System.exit(0);
+        } // if
+	
+	// more calls to test methods down here...
+    } // main
+
+} // Driver
+```
+
 <!--
+
 ## ListADT Tester
-
-We have provided a testing script to test your implementations of both `ArrayStringList`
-and `LinkedStringList`. The script is available on Odin. **To run it, you need to be in
-your main project directory** (i.e., `cs1302-phased-list`) and ensure the following:
-
-* The `phase1.jar` file is in the current directory; and
-* Your code has been compiled to the `bin` directory.
-
-To be clear, both `phase1.jar` and `bin` are assumed to be in the your main project directory
-when the tester is run. If your code does not yet compile because one of the classes does not
-yet fully implement the `StringList` interface, then you can rapidly get it to compile by
-following the advice given [here](#faq-uoe).
-
-To see the options for the tester, run `listadt-tester` in your main project directory:
-
-```
-$ listadt-tester
-```
-```
-Usage: listadt-tester [OPTION]...
 
 Run public test cases for the cs1302-phased-list project. This program assumes
 that your code compiles correctly, the default location for compiled code
@@ -544,48 +563,52 @@ of steps that you may need to take to complete the project.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code. 
 
-1. Start implementing the method bodies in `BaseStringList`.
+1. Start by implementing a few methods in `BaseStringList`.
    - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write 
      them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
      script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
           
      ```java
+     
      public static void main(String[] args) {
         StringList sl = new ArrayStringList();
 
         // Testing isEmpty on an empty list
-        if (s1.isEmpty()) {
+        if (sl.isEmpty()) {
             System.out.println("isEmpty: Test Passed");
         } else {
             System.out.println("isEmpty: Test Failed");
             System.exit(0);
         } // if
-        
-	// Testing size on an empty list
-        if (s1.size() == 0) {
+
+        // Testing size on an empty list
+        if (sl.size() == 0) {
             System.out.println("size: Test Passed");
         } else {
             System.out.println("size: Test Failed");
             System.exit(0);
         } // if
      } // main  
+     
      ```
      
      If you've done everything properly so far, this should run and print two passing messages to the console. The code above contains two
      possible test cases that we could run when grading your program. As you are working through other methods, you will want to add test 
      cases in `Driver` to make sure those methods are working. In general, it is best to put each test case in its own method instead
      of putting them all in `main`.
-     
-   - [ ] Implement the append and prepend
-3. Actually implement one of the classes (e.g., `ArrayStringList`):
 
+     At this point, you should have the basic foundation for your program done including skeleton code, a compile script, and a good understanding
+     of what all of the methods do (and how they do them). The order in which you complete the other methods is up to you. However, we
+     recommend completing one of the child classes before continuing with `BaseStringList`.
+     
+1. Implement `ArrayStringList`:
    - [ ] Write the code for the default constructor. You will likely need to introduce 
          instance variables into the class to keep track of object state.
    - [ ] For each of the independent methods you identified earlier, attempt to
          write them. You may need to introduce more instance variables, as needed, into 
 	 the class to keep track of object state.
 	 * No only should you implement these methods, but **you should test them too**.
-	   Create a driver program that creates a list object, calls these methods, 
+	   Add code to your driver program that creates a list object, calls these methods, 
 	   and make sure that they work. When you create a test method, have the method
 	   perform it's test on a `StringList` instead of an `ArrayStringList`. That
 	   way, you'll know that it works from the perspective of the interface.
@@ -621,17 +644,22 @@ of steps that you may need to take to complete the project.
 	   there is probably very little, if any, changes that you need to make
 	   in order to test the methods in this class.
 	 * Is this method implemented _exactly_ the same way in your other class?
-	   **What a great opportunity!** Try to [create a parent class](#abstract-parent) that
-	   contains this and any other such method. If you do it right, then you can 
-	   get away with not writing all of the methods again. There is some leg work
-	   and reorganization involved, but trust us, it's worth it.
 	 * Don't forget to `git commit` whenever you get something to work.
 	 * Don't skip using `checkstyle`. If you've been using it as recommended, 
 	   you should start to notice how many fewer fixes you're having to make
 	   to keep your code in valid style.
    - [ ] Write and test the copy constructor. You can very likely implement it
          using some of your other methods.	   
-	 
+
+1. Implement `BaseStringList`:
+   - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
+      write the other methods in `BaseStringList`. While writing each method, be sure to use the
+      methods you implemented in the children. The beauty of having the abstract parent is that we only have to write
+      these methods once and they will work on objects of any child type! Remember, the parent class does not need to understand
+      the underlying data structure (array) in this case. It just needs to call the appropriate methods to
+      implement its actions.
+   - [ ] Test, run `checkstyle`, and commit often while working on these methods.
+     	 
 **We very much appreciate any and all feedback you might have for this section.**
 Please don't hesitate to send us a private piazza message with suggestions on
 how to make it better after you complete your project. 
