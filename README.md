@@ -136,20 +136,40 @@ require the presence of a method related to a particular functionality.
 The actual functionality is tested using test cases.
 
 For this project, you are required to create two different classes that
-implement the same interface. While the specific details are listed below,
-the following diagram illustrates the general relationship between your 
-classes and the interface (with instance variables and most methods omitted 
-from the diagram for brevity):
+implement the same interface via a common abstract parent. While the specific 
+details are listed later in this document, the following diagram illustrates the 
+general relationship between your classes and the interface. The package `cs1302.adt`
+is provided for you in the `phase1.jar` file. You do not have access to the source
+code. However, you do have access to the _byte code_ which means you can still use
+both `StringList` and `Node` in your code. Note that `BaseStringList` depends on
+`StringList` (since it implements it) and `LinkedStringList` depends on `Node`.
 
-![UML Diagram 1](listadt_uml1_good.png)
+![UML Diagram 1](phase1.png)
 
 The specific requirements for each class are presented below.
 
-* **`ArrayStringList`:** Create the `cs1302.list.ArrayStringList` class such
-  that it properly implements the `cs1302.listadt.StringList` interface with additional
-  requirements listed below.
+* **`BaseStringList`:** Create the abstract `cs1302.p2.BaseStringList` class such that it properly
+  implements a subset of the abstract methods of `StringList`. Since `BaseStringList` is abstract, it is
+  not mandatory to implement all methods of `StringList` within this class. The exact list of methods this class
+  must implement are listed in the method section for `BaseStringList` in the provided UML diagram above.
+  Remember, since `BaseStringList` is an abstract parent to both `ArrayStringList` and `LinkedStringList`,
+  it's methods must be implemented without reference to the underlying data structure. In other words,
+  within `BaseStringList`, you cannot assume that the list is implemented with an array or a linked list.
+  The code contained in that class must be general enough to work with both.
+  
+  * **Note:** The methods that are listed in the `BaseStringList` in the UML diagram, must be implemented
+    in that class. You are not allowed to move any of them into `ArrayStringList` or `LinkedStringList`.
+    You may, however, find that you can more one or more methods from `ArrayStringList` and `LinkedStringList`
+    up into `BaseStringList`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
+    move up only has to be written once! However, accomplishing this will require some thought. We hope that 
+    all of you spend some time trying to ensure that `ArrayStringList` and `LinkedStringList` only contain the
+    methods that absolutely need to be implemented in the child classes!
+  
+* **`ArrayStringList`:** Create the `cs1302.p2.ArrayStringList` class such
+  that it properly extends `cs1302.p2.BaseStringList` and fully implements
+  the `cs1302.adt.StringList` interface with additional requirements listed below.
 
-  * You must explicitly define and document  default constructor for this class. 
+  * You must explicitly define and document a default constructor for this class. 
     The initial size of an `ArrayStringList` is `0` regardless of the list's
     underlying storage--remember, the list's internal storage and the list 
     itself are two different things. Here is the signature:
@@ -158,7 +178,7 @@ The specific requirements for each class are presented below.
     public ArrayStringList();
     ```
 
-  * You must explicitly define and document a copy constructor for this class.
+<!--  * You must explicitly define and document a copy constructor for this class.
     It should make the new list a deep copy of the other list. Therefore, the initial 
     size and element values of the new list should be the other list. The other
     list can be any implementation of the `StringList` interface. Here is
@@ -167,18 +187,23 @@ The specific requirements for each class are presented below.
     ```java
     public ArrayStringList(StringList other);
     ```
-    
+-->
+
   * Over the lifetime of an `ArrayStringList` object, its internal storage may
     change in order to accomodate more list elements. When your code increases
     the size of an `ArrayStringList` object's internal array storage, 
     **you should actively avoid: i) increasing the array size by one; and ii)
-    doubling the size of the array.** Somewhere in between is more reasonable.
-    Furthermore, **you should not set the initial array size to `0` or to the
+    doubling the size of the array.** Increasing by one is wasteful as it requires making
+    a new array and copying over all elements every time an item is added. Doubling the size
+    of the array may be wasteful at large sizes as there may be many indeces that contain `null`.
+    Somewhere in between is more reasonable (increasing by 50%? increasing by 25%? We'll leave
+    the details up to you). Furthermore, **you should not set the initial array size to `0` or to the
     largest number that is allowed.** 
 	
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
 
+<!--
   * **Extra Credit (5 points):** Override the `iterator()` method for your
     `ArrayStringList` class as described in the `StringList` interface. This _may_ 
     require you to create an additional class that implements another interface.
@@ -193,10 +218,11 @@ The specific requirements for each class are presented below.
 
     **NOTE:** You do not need to implement the `iterator()` method if you
     are not doing the extra credit.
+-->
 
-* **`LinkedStringList`:** Create the `cs1302.list.LinkedStringList` class such
-  that it properly implements the `cs1302.listadt.StringList` interface 
-  with additional requirements listed below. 
+* **`LinkedStringList`:** Create the `cs1302.p2.LinkedStringList` class such
+  that it properly extends `cs1302.p2.BaseStringList` and fully implements 
+  the `cs1302.adt.StringList` interface with additional requirements listed below. 
 
   * You must explicitly define and document a default constructor for this class. 
     The initial size of a `LinkedStringList` is `0` regardless of the list's
@@ -207,6 +233,7 @@ The specific requirements for each class are presented below.
     public LinkedStringList();
     ```
 
+<!--
   * You must explicitly define and document a copy constructor for this class.
     It should make the new list a deep copy of the other list. Therefore, the initial 
     size and element values of the new list should be the other list. The other
@@ -216,10 +243,12 @@ The specific requirements for each class are presented below.
     ```java
     public LinkedStringList(StringList other);
     ```
-	
+-->
+
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
 
+<!--
   * **Extra Credit (5 points):** Override the `iterator()` method for your
     `LinkedStringList` class as described in the `StringList` interface. This _may_ 
     require you to create an additional class that implements another interface.
@@ -234,6 +263,7 @@ The specific requirements for each class are presented below.
 
     **NOTE:** You do not need to implement the `iterator()` method if you
     are not doing the extra credit.
+-->
 
 * **(100 points) Test Cases**: The bulk of this project will be graded
   based on at least 50 JUnit test cases, each worth at most 2 points. This is the same as
@@ -261,7 +291,7 @@ point total. That is, they are all or nothing.
   requirements, this requirement is all or nothing. 
   
   **NOTE:** The [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide)
-  includes instructions on how to use the `checkstyle` program to check
+  includes instructions on how to use the `check1302` program to check
   your code for compliance on Odin.  
 
 * **In-line Documentation (10 points):** Code blocks should be adequately documented
@@ -282,26 +312,26 @@ made to modify your submission to evaluate other requirements.
 
 * **Project Directory Structure:** <a id="struct"/>The location of the default
   package for the source code should be a direct subdirectory of 
-  `cs1302-listadt` called `src`. When the project is compiled, 
+  `cs1302-phased-list` called `src`. When the project is compiled, 
   the `-d` option should be used with `javac` to make the default package 
-  for compiled code a direct subdirectory of `cs1302-listadt` 
+  for compiled code a direct subdirectory of `cs1302-phased-list` 
   called `bin`. 
   
   If you follow this structure, then you would type the following to compile 
   your code, assuming you are in the top-level project 
-  directory `cs1302-listadt`:
+  directory `cs1302-phased-list`:
   
   ```
-  $ javac -cp listadt.jar -d bin src/cs1302/list/ArrayStringList.java
-  $ javac -cp listadt.jar -d bin src/cs1302/list/LinkedStringList.java
+  $ javac -cp phase1.jar -d bin src/cs1302/list/ArrayStringList.java
+  $ javac -cp phase1.jar -d bin src/cs1302/list/LinkedStringList.java
   ```
   
   Remember, when you compile `.java` files individually, there might be 
   dependencies between the files. In such cases, the order in which you
   compile the code matters. Also, if more than one default package is needed
-  (e.g., `listadt.jar` and some other directory like `bin`), then a colon `:` 
+  (e.g., `phase1.jar` and some other directory like `bin`), then a colon `:` 
   can be used to separate each path in a list of multiple paths supplied
-  to `-cp` (e.g., `-cp listadt.jar:bin`). For more information, see 
+  to `-cp` (e.g., `-cp phase1.jar:bin`). For more information, see 
   ["Setting the Classpath"](https://github.com/cs1302uga/cs1302-tutorials/blob/master/packages.md#setting-the-class-path) 
   in the package tutorial.
 
@@ -317,7 +347,7 @@ made to modify your submission to evaluate other requirements.
   compilation dependencies. You should remove any `.java` files that you
   do not need before submission. 
   
-* **`cs1302.list.ArrayStringList` Storage Requirement:**
+* **`cs1302.p2.ArrayStringList` Storage Requirement:**
   You must use a basic Java array for this class's storage. The initial
   size of the array does not have to be the same size as the initial size
   of the list. Whenever the size of the list is about to exceed the size
@@ -329,8 +359,8 @@ made to modify your submission to evaluate other requirements.
   array elsewhere in the class. This requirement also prohibits any use of 
   third-party implementations of list or list-like interfaces.
 
-* **`cs1302.list.LinkedStringList` Storage Requirement:**
-  You must use a sequence of `cs1302.listadt.StringList.Node` objects
+* **`cs1302.p2.LinkedStringList` Storage Requirement:**
+  You must use a sequence of `cs1302.adt.StringList.Node` objects
   for this class's storage. Unlike the array-based implementation in
   `ArrayStringList`, this type of storage is not limited to the number
   of elements that can fit into an array (because there is not an array).
@@ -356,7 +386,7 @@ made to modify your submission to evaluate other requirements.
   `ArrayStringList` pointing to `LinkedStringList` or vise-versa.
   
   ```
-  $ jdeps -v -cp listadt.jar bin
+  $ jdeps -v -cp phase1.jar bin
   ```
 
 ### Grading
@@ -371,10 +401,10 @@ On Odin, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
 
 ```
-$ git clone --depth 1 https://github.com/cs1302uga/cs1302-listadt.git
+$ git clone --depth 1 https://github.com/cs1302uga/cs1302-phased-list.git
 ```
 
-This should create a directory called `cs1302-listadt` in
+This should create a directory called `cs1302-phased-list` in
 your present working directory that contains a clone of the 
 project's respository. Take a look around.
 
@@ -393,12 +423,12 @@ your instructor.
 
 We have provided a testing script to test your implementations of both `ArrayStringList`
 and `LinkedStringList`. The script is available on Odin. **To run it, you need to be in
-your main project directory** (i.e., `cs1302-listadt`) and ensure the following:
+your main project directory** (i.e., `cs1302-phased-list`) and ensure the following:
 
-* The `listadt.jar` file is in the current directory; and
+* The `phase1.jar` file is in the current directory; and
 * Your code has been compiled to the `bin` directory.
 
-To be clear, both `listadt.jar` and `bin` are assumed to be in the your main project directory
+To be clear, both `phase1.jar` and `bin` are assumed to be in the your main project directory
 when the tester is run. If your code does not yet compile because one of the classes does not
 yet fully implement the `StringList` interface, then you can rapidly get it to compile by
 following the advice given [here](#faq-uoe).
@@ -411,13 +441,13 @@ $ listadt-tester
 ```
 Usage: listadt-tester [OPTION]...
 
-Run public test cases for the cs1302-listadt project. This program assumes
+Run public test cases for the cs1302-phased-list project. This program assumes
 that your code compiles correctly, the default location for compiled code
-is 'bin', and 'listadt.jar' is in the current directory.
+is 'bin', and 'phase1.jar' is in the current directory.
 
 Options:
-    -a | --ArrayStringList     Check and test cs1302.list.ArrayStringList
-    -l | --LinkedStringList    Check and test cs1302.list.LinkedStringList
+    -a | --ArrayStringList     Check and test cs1302.p2.ArrayStringList
+    -l | --LinkedStringList    Check and test cs1302.p2.LinkedStringList
     --help                     Show this help information (ignore other options)
 ```
 
@@ -437,11 +467,11 @@ You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
 are on `odin.cs.uga.edu`. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document, 
-then the name of your project directory is likely `cs1302-listadt`. 
+then the name of your project directory is likely `cs1302-phased-list`. 
 While in your project's parent directory, execute the following command: 
 
 ```
-$ submit cs1302-listadt csci-1302
+$ submit cs1302-phased-list csci-1302
 ```
 
 If you have any problems submitting your project then please send a private
@@ -642,17 +672,17 @@ Below are some frequently asked questions related to this project.
 
    ![UML Diagram 2](listadt_uml2_good.png)
 
-1. **What is `listadt.jar`?**
+1. **What is `phase1.jar`?**
 
    In Java, `.jar` files are Java™ Archive (JAR) files that bundle multiple files into a single 
    compressed file. Typically a JAR file contains the package directories and `.class` files
    for a library. This is just like the `bin` directory that you are used to, except it's all
-   bundled into a single file. For example, the `listadt.jar` file contains the package directories
-   and `.class` files for `cs1302.listadt.StringList`. If you are in the same directory as
-   `listadt.jar`, then you can use the following command to take peek into the archive:
+   bundled into a single file. For example, the `phase1.jar` file contains the package directories
+   and `.class` files for `cs1302.adt.StringList`. If you are in the same directory as
+   `phase1.jar`, then you can use the following command to take peek into the archive:
    
    ```
-   $ jar -tf listadt.jar
+   $ jar -tf phase1.jar
    ```
    
    You should notice that the top-level directory in the JAR file is `cs1302`, which means that
@@ -676,7 +706,7 @@ Below are some frequently asked questions related to this project.
    ```
    $ javadoc1302 --StringList.java \
      USUAL_JAVADOC_OPTIONS_HERE \
-     -classpath listadt.jar \
+     -classpath phase1.jar \
      -link https://docs.oracle.com/en/java/javase/11/docs/api/
    ```
    
