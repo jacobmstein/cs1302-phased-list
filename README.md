@@ -615,7 +615,8 @@ Below are some frequently asked questions related to this project.
    an instance of [`UnsupportedOperationException`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html)
    if you choose to do this. For example, you might write something like this for the `get(int)`
    method:
-   ```
+   
+   ```java
    public String get(int index) {
        throw new UnsupportedOperationException("not yet implemented");
    } // get
