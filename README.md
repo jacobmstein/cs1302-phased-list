@@ -532,18 +532,52 @@ of steps that you may need to take to complete the project.
 1. Prepare to implement the methods:
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
-         are in the correct package. For each file:
-	 * Write the class signature (top-level declaration) and all of the method signatures (member-level declarations).
+         are in the correct package and all entities have the proper visibility. For each file:
+	 * Write the class signature (top-level declaration) and all of the method signatures (member-level declarations). Remember, in the child
+	   classes (`ArrayStringList` and `LinkedStringList`), you don't need to include method signatures for inherited methods that aren't overridden
+	   in the child classes.
 	 * In the body of each method, write the `throw` statement that is suggested
 	   in [the FAQ](#faq-uoe). **Do not attempt to actually implement the method yet.**
 	 * Run `checkstyle` to make sure that you're off to a good start, style-wise.
 	   **Yes, this includes Javadoc comments;** read [this](https://github.com/cs1302uga/cs1302-styleguide/blob/master/README.md#missingjavadocmethod)
 	   for a recommended way to handle the inherited documentation. 
-	 * Make sure the files compile, even though they're not really implemented yet.
-	   This will make it easier to test/debug your code. See the FAQ below for
-	   a nice, clean solution to compiling an unimplemented method.
+	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
+	   compilation in the future. This will make it easier to test/debug your code. 
 
-1. Actually implement one of the classes (e.g., `ArrayStringList`):
+1. Start implementing the method bodies in `BaseStringList`.
+   - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write 
+     them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
+     script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
+          
+     ```java
+     public static void main(String[] args) {
+        StringList sl = new ArrayStringList();
+
+        // Testing isEmpty on an empty list
+        if (s1.isEmpty()) {
+            System.out.println("isEmpty: Test Passed");
+        } else {
+            System.out.println("isEmpty: Test Failed");
+            System.exit(0);
+        } // if
+        
+	// Testing size on an empty list
+        if (s1.size() == 0) {
+            System.out.println("size: Test Passed");
+        } else {
+            System.out.println("size: Test Failed");
+            System.exit(0);
+        } // if
+     } // main  
+     ```
+     
+     If you've done everything properly so far, this should run and print two passing messages to the console. The code above contains two
+     possible test cases that we could run when grading your program. As you are working through other methods, you will want to add test 
+     cases in `Driver` to make sure those methods are working. In general, it is best to put each test case in its own method instead
+     of putting them all in `main`.
+     
+   - [ ] Implement the append and prepend
+3. Actually implement one of the classes (e.g., `ArrayStringList`):
 
    - [ ] Write the code for the default constructor. You will likely need to introduce 
          instance variables into the class to keep track of object state.
