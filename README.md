@@ -506,9 +506,10 @@ of steps that you may need to take to complete the project.
    
 1. Before you write any code (Estimated Time = 40%):
 
-   - [ ] For each method in the interface, make sure you understand what a user
-         expects to happen when calling that method on an object of an 
-	 implementing class. 
+   - [ ] For each method in the interface, make sure you understand how to call each method and what a user
+         expects to happen when calling that method on an object of an implementing class. For example, what 
+	 would occur if the driver program executed the line `sl.append("end")` on a preexisting object of
+	 a class that implements `StringList`? 
    - [ ] For each method in the interface, try to write down what you
          think the basic steps need to be in order to produce the desired outcome.
 	 * Try to keep it high level. If the steps that write down sound like they
@@ -518,7 +519,9 @@ of steps that you may need to take to complete the project.
 	 * Here is an example: If there are multiple methods that have a step that 
 	   gets an element from a specific index in the list, then you might have
 	   that method call the list's [`get`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html#get(int))
-	   method.   
+	   method.
+	 * Consider drawing out diagrams similar to the diagrams to the provided
+	 [Examples](https://github.com/cs1302uga/cs1302-tutorials/blob/master/adt-and-links/adt-and-links.md#list-adt---examples-with-both-implementations).
    - [ ] Based on the previous suggestion, draw out what the method dependencies
          are for each method (i.e., what method depends on what). If you notice 
 	 any circular dependencies, then those should be eliminated. 
@@ -528,9 +531,9 @@ of steps that you may need to take to complete the project.
 	 
 1. Prepare to implement the methods:
 
-   - [ ] Create the `.java` files for each implementing class and make sure they
+   - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
          are in the correct package. For each file:
-	 * Write the class signature and all of the method signatures.
+	 * Write the class signature (top-level declaration) and all of the method signatures (member-level declarations).
 	 * In the body of each method, write the `throw` statement that is suggested
 	   in [the FAQ](#faq-uoe). **Do not attempt to actually implement the method yet.**
 	 * Run `checkstyle` to make sure that you're off to a good start, style-wise.
