@@ -318,12 +318,11 @@ made to modify your submission to evaluate other requirements.
   called `bin`. 
   
   If you follow this structure, then you would type the following to compile 
-  your code, assuming you are in the top-level project 
+  `BaseStringList.java`, assuming you are in the top-level project 
   directory `cs1302-phased-list`:
   
   ```
-  $ javac -cp phase1.jar -d bin src/cs1302/list/ArrayStringList.java
-  $ javac -cp phase1.jar -d bin src/cs1302/list/LinkedStringList.java
+  $ javac -cp phase1.jar -d bin src/cs1302/p2/BaseStringList.java
   ```
   
   Remember, when you compile `.java` files individually, there might be 
@@ -331,10 +330,15 @@ made to modify your submission to evaluate other requirements.
   compile the code matters. Also, if more than one default package is needed
   (e.g., `phase1.jar` and some other directory like `bin`), then a colon `:` 
   can be used to separate each path in a list of multiple paths supplied
-  to `-cp` (e.g., `-cp phase1.jar:bin`). For more information, see 
-  ["Setting the Classpath"](https://github.com/cs1302uga/cs1302-tutorials/blob/master/packages.md#setting-the-class-path) 
-  in the package tutorial.
+  to `-cp` (e.g., `-cp phase1.jar:bin`). Since `ArrayStringList` and `LinkedStringList`
+  depend on files in `phase1.jar` and `BaseStringList` (in `bin`), we need
+  both to be on the classpath as follows:
 
+  ```
+  $ javac -cp bin:phase1.jar -d bin src/cs1302/p2/ArrayStringList.java
+  $ javac -cp bin:phase1.jar -d bin src/cs1302/p2/LinkedStringList.java
+  ```
+  
 * __Development Environment:__ This project must be implemented 
   in Java 11, and it *must compile and run* correctly on Odin using the specific
   version of Java 11 that is setup according to the instructions provided
@@ -344,8 +348,8 @@ made to modify your submission to evaluate other requirements.
   then they are expected to fulfill all non-functional and absolute requirements, 
   even if the main parts of the project do not use them. You may assume
   graders will compile your source code in an order that satisfies
-  compilation dependencies. You should remove any `.java` files that you
-  do not need before submission. 
+  compilation dependencies. **You should remove any `.java` files that you
+  do not need before submission.** 
   
 * **`cs1302.p2.ArrayStringList` Storage Requirement:**
   You must use a basic Java array for this class's storage. The initial
@@ -375,10 +379,9 @@ made to modify your submission to evaluate other requirements.
 * **No Implementation Dependencies:** <a id="no-impl-deps"/>You are not permitted to use one 
   implementation of the `StringList` interface in another implementation.
   For example, you cannot use the `ArrayStringList` class inside of your
-  `LinkedStringList` class or vise versa. If you decide to implement a
-  parent class or create a class for the extra credit, then those new classes
+  `LinkedStringList` class or vise versa. Additionally, `BaseStringList`
   cannot depend on either of the `StringList` implementations, however,
-  they can depend on the `StringList` interface itself. If you have any
+  it can (and should) depend on the `StringList` interface itself. If you have any
   questions about this, then please ask your instructor.
   
   You can check this using the `jdeps` tool. Inspect the output of 
@@ -419,6 +422,7 @@ $ git pull
 If you have any problems with these download procedures, then please contact
 your instructor.
 
+<!--
 ## ListADT Tester
 
 We have provided a testing script to test your implementations of both `ArrayStringList`
@@ -460,6 +464,7 @@ $ listadt-tester -a
 
 If you have any questions, please feel free to ask on Piazza.
      
+-->
 
 ## Submission Instructions
 
@@ -492,7 +497,7 @@ of steps that you may need to take to complete the project.
 
    - [ ] Read through the entire project description, including the appendices, 
          **and write down questions as you go**.
-   - [ ] Read through the entire [API Documentation for `StringList`](http://csweb.cs.uga.edu/~mec/cs1302/listadt-api/),
+   - [ ] Read through the entire [API Documentation for `StringList`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html),
          **and write down questions as you go**. 
 	 * Be sure to read both the summary comment for each method and its detailed
 	   description (which can be reached by clicking on it). 
@@ -511,7 +516,7 @@ of steps that you may need to take to complete the project.
 	   then you might introduce that as a _private_ or _protected_ helper method.
 	 * Here is an example: If there are multiple methods that have a step that 
 	   gets an element from a specific index in the list, then you might have
-	   that method call the list's [`get`](http://csweb.cs.uga.edu/~mec/cs1302/listadt-api/cs1302/listadt/StringList.html#get-int-)
+	   that method call the list's [`get`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html#get(int))
 	   method.   
    - [ ] Based on the previous suggestion, draw out what the method dependencies
          are for each method (i.e., what method depends on what). If you notice 
@@ -526,12 +531,13 @@ of steps that you may need to take to complete the project.
          are in the correct package. For each file:
 	 * Write the class signature and all of the method signatures.
 	 * In the body of each method, write the `throw` statement that is suggested
-	   in [the FAQ](#faq-uoe). Do not attempt to actually implement the method yet.
+	   in [the FAQ](#faq-uoe). **Do not attempt to actually implement the method yet.**
 	 * Run `checkstyle` to make sure that you're off to a good start, style-wise.
 	   **Yes, this includes Javadoc comments;** read [this](https://github.com/cs1302uga/cs1302-styleguide/blob/master/README.md#missingjavadocmethod)
 	   for a recommended way to handle the inherited documentation. 
 	 * Make sure the files compile, even though they're not really implemented yet.
-	   This will make it easier to test/debug your code.
+	   This will make it easier to test/debug your code. See the FAQ below for
+	   a nice, clean solution to compiling an unimplemented method.
 
 1. Actually implement one of the classes (e.g., `ArrayStringList`):
 
