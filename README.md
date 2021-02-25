@@ -1,11 +1,11 @@
-# CSCI 1302 - Phased List v2021.sp
+# CSCI 1302 - Phased List (Phase 1) v2021.sp
 
 ![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
-This document contains the description for the List ADT project
-assigned to the students in the Spring 2021 CSCI 1302 classes
+This document contains the description for Phase 1 of the List ADT 
+project assigned to the students in the Spring 2021 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -61,9 +61,8 @@ late penalty does not start applying until after the final date listed.
 **You agree to the Academic Honesty policy as outlined in the course syllabus.**
 In accordance with this notice, I must caution you **not** to 
 fork this repository on GitHub if you have an account. Doing so will more than
-likely make your copy of the project publicly visible. Please follow the 
-instructions contained in the 
-[How to Download the Project](#how-to-download-the-project)
+likely make your copy of the project publicly visible. Please follow the instructions contained 
+in the [How to Download the Project](#how-to-download-the-project)
 section below in order to do your development on odin. Furthermore, you must adhere
 to the copyright notice and licensing information at the bottom of this document.
 
@@ -98,34 +97,31 @@ elements even though the internal storage may be larger. The internal array is h
 concern to the user of the class.
 
 Each implementation of the `StringList` interface will be a concrete class with specific functional
-and non-functional requirements. These classes need to implement `StringList`
-either directly or via a common abstract parent class.
+and non-functional requirements. These classes need to implement `StringList`via a common abstract 
+parent class.
 
 For this project, you will *NOT* have access to the `.java` files for the
 interface. Instead, you will have access to the generated API documentation
-for the interface <a href="http://csweb.cs.uga.edu/~mec/cs1302/listadt-api/">here</a>.
+for the interface <a href="https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html">here</a>.
 Implementors should make sure that each method functions or behaves as described
 by the interface's API documentation, except in cases where a functional requirement 
 changes the behavior of the method.
 
 Implementors are always free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
-users (e.g., graders) will use them (even if declared with `public` visibility), 
-since they are not defined in the interface. These additional methods may help
-avoid redundancy and promote code reuse within an implementation.
+users (e.g., graders) will use these additional methods (even if declared with 
+`public` visibility), since they are not defined in the interface. These additional 
+methods may help avoid redundancy and promote code reuse within an implementation.
 
-**We understand that this project may seem overwhelming and that you might not know
-where to get started.** Because of this, based on discussions with past students,
-we have prepared a [Suggested Checklist](#appendix---suggested-checklist) section in
-the Appendices which contains some suggestions on how to work through the project 
-from start to finish.
+Based on discussions with past students, we have prepared a 
+[Suggested Checklist](#appendix---suggested-checklist) section in the Appendices which 
+contains some suggestions on how to work through the project from start to finish.
 
 ### Suggested Reading
 
 * [Interfaces Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/interfaces/interfaces.md)
-* [API Documentation for Phase 1 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html)
-* [API Documentation for Phase 2 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/2/index.html)
 * [ADTS and Lists Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/adt-and-links/adt-and-links.md)
+* [API Documentation for Phase 1 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html)
 
 ## Project Requirements & Grading
 
