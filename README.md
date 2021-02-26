@@ -532,14 +532,14 @@ of steps that you may need to take to complete the project.
 	 a class that implements `StringList`? 
    - [ ] For each method in the interface, try to write down what you
          think the basic steps need to be in order to produce the desired outcome.
-	 * Try to keep it high level. If the steps that write down sound like they
+	 * Try to keep it high level. If the steps that you write down sound like they
 	   can be accomplished with another method, then replace those steps with
 	   a note to refer to that method. If that other method does not yet exist,
 	   then you might introduce that as a _private_ or _protected_ helper method.
 	 * Here is an example: If there are multiple methods that have a step that 
 	   gets an element from a specific index in the list, then you might have
 	   that method call the list's [`get`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html#get(int))
-	   method.
+	   method instead of directly accessing the underlying data structure (array or linked list).
 	 * Consider drawing out diagrams similar to the diagrams to the provided
 	 [Examples](https://github.com/cs1302uga/cs1302-tutorials/blob/master/adt-and-links/adt-and-links.md#list-adt---examples-with-both-implementations).
    - [ ] Based on the previous suggestion, draw out what the method dependencies
@@ -608,7 +608,7 @@ of steps that you may need to take to complete the project.
    - [ ] For each of the independent methods you identified earlier, attempt to
          write them. You may need to introduce more instance variables, as needed, into 
 	 the class to keep track of object state.
-	 * No only should you implement these methods, but **you should test them too**.
+	 * Not only should you implement these methods, but **you should test them too**.
 	   Add code to your driver program that creates a list object, calls these methods, 
 	   and make sure that they work. When you create a test method, have the method
 	   perform it's test on a `StringList` instead of an `ArrayStringList`. That
@@ -730,23 +730,6 @@ Below are some frequently asked questions related to this project.
    We reccommend that you further break up your test code into methods in order to
    reduce the redundancy you see in the example above. Your test code does not need
    to look like what we provided; it's just an illustrative example.
-   
-<!--   
-1. **<a id="abstract-parent"/>How can I remove redundancy between my two implementations of the interface?**
-
-   You may find yourself implementing a method the exact same way in both classes. This is an
-   excellent opportunity to promote code reuse via inheritance! While not a requirement,
-   proper use of a single parent class containing methods and variables common to both
-   implementations can _vastly_ reduce the amount of code that you need to write for this
-   project. It is a beautiful compromise that illustrates the trade-off between more planning
-   versus more code writing and debugging.
-   
-   Here is a UML diagram that illustrates what the relationships between your classes, the parent class,
-   and the interface _might_ look like (with instance variables and most methods omitted 
-   from the diagram for brevity):
-
-   ![UML Diagram 2](listadt_uml2_good.png)
--->
 
 1. **What is `phase1.jar`?**
 
