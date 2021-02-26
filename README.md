@@ -102,10 +102,9 @@ parent class.
 
 For this project, you will *NOT* have access to the `.java` files for the
 interface. Instead, you will have access to the generated API documentation
-for the interface <a href="https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html">here</a>.
+for the [`StringList` interface](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html).
 Implementors should make sure that each method functions or behaves as described
-by the interface's API documentation, except in cases where a functional requirement 
-changes the behavior of the method.
+by the interface's API documentation.
 
 Implementors are always free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
@@ -131,9 +130,8 @@ highest possible grade is 110 (due to extra credit).
 ### Functional Requirements
 
 A functional requirement is *added* to your point total if satisfied.
-There will be no partial credit for any of the requirements that simply 
-require the presence of a method related to a particular functionality. 
-The actual functionality is tested using test cases.
+There will be no partial credit given for visual inspection of your code. 
+Points are assigned for each test case that executes properly.
 
 For this project, you are required to create two different classes that
 implement the same interface via a common abstract parent. While the specific 
@@ -141,9 +139,9 @@ details are listed later in this document, the following diagram illustrates the
 general relationship between your classes and the interface. The package `cs1302.adt`
 is provided for you in the `phase1.jar` file which is included in the download for the
 project (details later). You do not have access to the source
-code. However, you do have access to the _byte code_ which means you can still use
-both `StringList` and `Node` in your code. Note that `BaseStringList` depends on
-`StringList` (since it implements it) and `LinkedStringList` depends on `Node`.
+code for classes in `cs1302.adt`. However, you do have access to the _byte code_ and the API
+documentation website. You will need to use both `StringList` and `Node` in your code since `BaseStringList` 
+depends on `StringList` (it implements it) and `LinkedStringList` depends on `Node`.
 
 ![UML Diagram 1](phase1.png)
 
@@ -155,10 +153,10 @@ The specific requirements for each class are presented below.
   must implement are listed in the method section for `BaseStringList` in the provided UML diagram above.
   Remember, since `BaseStringList` is an abstract parent to both `ArrayStringList` and `LinkedStringList`,
   it's methods must be implemented without reference to the underlying data structure. In other words,
-  within `BaseStringList`, you cannot assume that the list is implemented with an array or a linked list.
-  The code contained in that class must be general enough to work with both.
+  within `BaseStringList`, you should not use arrays or nodes. The code contained in this class must be 
+  general enough to work with both.
   
-  * **Note:** The methods that are listed in the `BaseStringList` in the UML diagram, must be implemented
+  * **Note:** The methods that are listed in the UML diagram in `BaseStringList` must be implemented
     in that class. You are not allowed to move any of them into `ArrayStringList` or `LinkedStringList`.
     You may, however, find that you can more one or more methods from `ArrayStringList` and `LinkedStringList`
     up into `BaseStringList`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
@@ -267,10 +265,10 @@ The specific requirements for each class are presented below.
 -->
 
 * **(100 points) Test Cases**: The bulk of this project will be graded
-  based on at least 50 JUnit test cases, each worth at most 2 points. This is the same as
-  someone using the classes you wrote based purely on the interface
-  definitions. If you implement the interface correctly, then you should
-  pass the associated test cases. 
+  based on approximately 50 test cases, each worth approximately 2 points. 
+  This is the same as someone using the classes you wrote based purely on 
+  the interface definitions. If you implement the interface correctly, 
+  then you should pass the associated test cases. 
   
 ### Non-Functional Requirements
 
@@ -319,11 +317,11 @@ made to modify your submission to evaluate other requirements.
   called `bin`. 
   
   If you follow this structure, then you would type the following to compile 
-  `BaseStringList.java`, assuming you are in the top-level project 
+  `BaseStringList.java` to the `bin` directory, assuming you are in the top-level project 
   directory `cs1302-phased-list`:
   
   ```
-  $ javac -cp phase1.jar -d bin src/cs1302/p2/BaseStringList.java
+  $ javac -d bin -cp phase1.jar src/cs1302/p2/BaseStringList.java
   ```
   
   Remember, when you compile `.java` files individually, there might be 
@@ -368,7 +366,7 @@ made to modify your submission to evaluate other requirements.
   You must use a sequence of `cs1302.adt.StringList.Node` objects
   for this class's storage. Unlike the array-based implementation in
   `ArrayStringList`, this type of storage is not limited to the number
-  of elements that can fit into an array (because there is not an array).
+  of elements that can fit into an array (because there is no underlying array).
   Instead, it's limited only by the available memory for the Java program
   using the `LinkedStringList` object. 
   If you use Java's `java.util.LinkedList` class or something similar, then that 
@@ -425,9 +423,12 @@ your instructor.
 
 ## ListADT Testing
 
-We have provided an oracle class (`cs1302.oracle.OracleStringList`) that you can instantiate and use
-in your driver program. The oracle will allow you to run your tests using a trusted implementation of
-`StringList` to see the expected output of your tests.
+You are responsible for implementing test cases to test your `ArrayStringList` and `LinkedStringList` classes. There are
+a few examples of test cases provided in the checklist and FAQ sections below.
+
+Additionally, we have provided an oracle class (`cs1302.oracle.OracleStringList`) that you can instantiate and use
+in your driver program. The oracle will allow you to run test cases that you write using a trusted implementation of
+`StringList` so you can compare the oracle output to the output of your `StringList` implementations.
 
 Here is an example `Driver` class that us set up to run the test cases with all three implementation. You would just need
 to uncomment the implementation you wanted to use:
