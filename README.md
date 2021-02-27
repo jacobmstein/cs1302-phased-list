@@ -630,8 +630,6 @@ of steps that you may need to take to complete the project.
 	 * identify and fix bugs faster;
 	 * not have to go back and fix as many style errors and/or comments; and
 	 * have a better understanding of how your class works.
-   - [ ] Write and test the copy constructor. You can very likely implement it
-         using some of your other methods.
 
 1. Implement `LinkedStringList` (Suggested Deadline: Tuesday, Mar 9th): 
 
@@ -649,8 +647,6 @@ of steps that you may need to take to complete the project.
 	 * Don't skip using `checkstyle`. If you've been using it as recommended, 
 	   you should start to notice how many fewer fixes you're having to make
 	   to keep your code in valid style.
-   - [ ] Write and test the copy constructor. You can very likely implement it
-         using some of your other methods.	   
 
 1. Implement `BaseStringList` (Suggested Deadline: Thursday, Mar 11th):
    - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
