@@ -514,7 +514,7 @@ read the entire project description, including the [FAQ](#appendix---faq).
 These steps are suggesions and, therefore, do not constitute an exhaustive list 
 of steps that you may need to take to complete the project. 
 
-1. Preparation (Estimated Time = 10%):
+1. Preparation (Suggested Deadline: Wednesday, Mar 3rd):
 
    - [ ] Read through the entire project description, including the appendices, 
          **and write down questions as you go**.
@@ -524,7 +524,7 @@ of steps that you may need to take to complete the project.
 	   description (which can be reached by clicking on it). 
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
    
-1. Before you write any code (Estimated Time = 40%):
+1. Before you write any code (Suggested Deadline: Wednesday, Mar 3rd):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what 
@@ -549,7 +549,7 @@ of steps that you may need to take to complete the project.
 	   start with in the next phase of your development. We'll call these the
 	   independent methods.
 	 
-1. Prepare to implement the methods:
+1. Prepare to implement the methods (Suggested Deadline: Friday, Mar 5th):
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
@@ -564,7 +564,7 @@ of steps that you may need to take to complete the project.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code. 
 
-1. Start by implementing a few methods in `BaseStringList`.
+1. Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Friday, Mar 5th).
    - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write 
      them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
      script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
@@ -602,7 +602,7 @@ of steps that you may need to take to complete the project.
      of what all of the methods do (and how they do them). The order in which you complete the other methods is up to you. However, we
      recommend completing one of the child classes before continuing with `BaseStringList`.
      
-1. Implement `ArrayStringList`:
+1. Implement `ArrayStringList` (Suggested Deadline: Sunday, Mar 7th):
    - [ ] Write the code for the default constructor. You will likely need to introduce 
          instance variables into the class to keep track of object state.
    - [ ] For each of the independent methods you identified earlier, attempt to
@@ -633,7 +633,7 @@ of steps that you may need to take to complete the project.
    - [ ] Write and test the copy constructor. You can very likely implement it
          using some of your other methods.
 
-1. Implement the other class (e.g., `LinkedStringList`): 
+1. Implement `LinkedStringList` (Suggested Deadline: Tuesday, Mar 9th): 
 
    - [ ] Write the code for the default constructor. You will likely need to introduce 
          instance variables into the class to keep track of object state. This
@@ -652,7 +652,7 @@ of steps that you may need to take to complete the project.
    - [ ] Write and test the copy constructor. You can very likely implement it
          using some of your other methods.	   
 
-1. Implement `BaseStringList`:
+1. Implement `BaseStringList` (Suggested Deadline: Thursday, Mar 11th):
    - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
       write the other methods in `BaseStringList`. While writing each method, be sure to use the
       methods you implemented in the children. The beauty of having the abstract parent is that we only have to write
@@ -661,6 +661,12 @@ of steps that you may need to take to complete the project.
       implement its actions.
    - [ ] Test, run `checkstyle`, and commit often while working on these methods.
      	 
+1. Final Run-through (Suggested Deadline: Friday, Mar 12th):
+   - [ ] Thoroughly test all of your methods on objects of both `ArrayStringList` and `LinkedStringList`.
+   - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
+   - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
+         the checkstyle audit.
+	 
 **We very much appreciate any and all feedback you might have for this section.**
 Please don't hesitate to send us a private piazza message with suggestions on
 how to make it better after you complete your project. 
