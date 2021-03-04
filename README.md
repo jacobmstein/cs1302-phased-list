@@ -390,6 +390,11 @@ made to modify your submission to evaluate other requirements.
   ```
   $ jdeps -v -cp phase1.jar bin
   ```
+  
+  You are also NOT allowed to use the `java.util.Arrays` class. For more
+  information on why, please read [this FAQ item](#java-util-Arrays). You
+  can also check for that using `jdeps` as described above -- you don't want
+  to see `java.util.Arrays` anywhere in the output.
 
 ### Grading
 
@@ -755,7 +760,10 @@ Below are some frequently asked questions related to this project.
 
    It doesn't work because the `javadoc` tool requires the source code in order to automatically
    pull the text of comments from supertypes when applicable. **We did not provide you with the
-   source code for the interface,** so this is working as intended. **However,** you can use the
+   source code for the interface,** so this is working as intended. 
+   
+   <!--
+   **However,** you can use the
    `javadoc1302` command (only available on Odin) along with the `--StringList.java` option
    instead of the usual `javadoc` command to give the Javadoc tool access to the source code 
    it needs to inherit the documentation.
@@ -779,11 +787,19 @@ Below are some frequently asked questions related to this project.
    The `\` and `>` characters will NOT be part of the command when you do your final press of the 
    `RET` key. 
    
+   //-->
+   
    **SUGGESTION:** **Do NOT manually copy the entire comment and parameter details from the API website.**
    Instead, include a summary sentence and `{@inheritDoc}` to make it clear to readers of the source
    code that your intent is to inherit the documentation. An example of this can be found in the
    style guide, [here](https://github.com/cs1302uga/cs1302-styleguide#missingjavadocmethod).
    
+1. **<a id="java-util-Arrays"/>Is `java.util.Arrays` class allowed?**
+
+   **No**; instead, you should write your own version of the method you want to use. Most of the
+   methods that you think you might need from that class can be written in 6 lines of code or less
+   (often much less), and writing your own version will serve as some much needed practice. 
+
 Have a question? Please post it on the course Piazza.
 
 <hr/>
