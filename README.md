@@ -801,7 +801,7 @@ Below are some frequently asked questions related to this project.
    code that your intent is to inherit the documentation. An example of this can be found in the
    style guide, [here](https://github.com/cs1302uga/cs1302-styleguide#missingjavadocmethod).
    
-1. **<a id="java-util-Arrays"/>Is `java.util.Arrays` class allowed?**
+1. **<a id="java-util-Arrays"/>Is the `java.util.Arrays` class allowed?**
 
    **No**, this violates [a requirement](#no-java-util-arrays); instead, you should write your 
    own version of the method you want to use. Most of the methods that you think you might need 
