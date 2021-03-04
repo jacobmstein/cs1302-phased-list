@@ -73,7 +73,9 @@ then you can update your copy of the project using the <code>$ git pull</code>
 command while inside of your project directory.
 
 * **2021-03-03-THU:** Updated the requirements to 
-  [forbid the use of the `java.util.Arrays` class](#no-java-util-arrays). 
+  [forbid the use of the `java.util.Arrays` class](#no-java-util-arrays).
+  You can still use arrays for your `ArrayStringList` class; however, you may not 
+  use the `java.util.Arrays` class or any of its methods.
 
 ## Project Description
 
