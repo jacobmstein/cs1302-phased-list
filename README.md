@@ -72,6 +72,9 @@ If there has been an update and you have already cloned the project to Odin,
 then you can update your copy of the project using the <code>$ git pull</code>
 command while inside of your project directory.
 
+* **2021-03-03-THU:** Updated the requirements to 
+  [forbid the use of the `java.util.Arrays` class](#no-java-util-arrays). 
+
 ## Project Description
 
 In this project, you will be providing two different implementations of
@@ -391,10 +394,12 @@ made to modify your submission to evaluate other requirements.
   $ jdeps -v -cp phase1.jar bin
   ```
   
-  You are also NOT allowed to use the `java.util.Arrays` class. For more
+* **No `java.util.Arrays` Dependency:** <a id="no-java-util-arrays"/>You 
+  are also NOT allowed to use the `java.util.Arrays` class. For more
   information on why, please read [this FAQ item](#java-util-Arrays). You
-  can also check for that using `jdeps` as described above -- you don't want
-  to see `java.util.Arrays` anywhere in the output.
+  can also check for the presence of this dependency using `jdeps` as described 
+  in an earlier requirement -- you don't want to see `java.util.Arrays` anywhere
+  in the output.
 
 ### Grading
 
@@ -796,9 +801,10 @@ Below are some frequently asked questions related to this project.
    
 1. **<a id="java-util-Arrays"/>Is `java.util.Arrays` class allowed?**
 
-   **No**; instead, you should write your own version of the method you want to use. Most of the
-   methods that you think you might need from that class can be written in 6 lines of code or less
-   (often much less), and writing your own version will serve as some much needed practice. 
+   **No**, this violates [a requirement](#no-java-util-arrays); instead, you should write your 
+   own version of the method you want to use. Most of the methods that you think you might need 
+   from that class can be written in 6 lines of code or less (often much less), and writing your 
+   own version will serve as some much needed practice. 
 
 Have a question? Please post it on the course Piazza.
 
