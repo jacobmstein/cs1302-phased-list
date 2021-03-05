@@ -77,7 +77,7 @@ command while inside of your project directory.
   You can still use arrays for your `ArrayStringList` class; however, you may not
   use the `java.util.Arrays` class or any of its methods.
 
-* **2021-03-05-FRI:** Updated `OracleStringList` in `phase`.jar` to throw an exception
+* **2021-03-05-FRI:** Updated `OracleStringList` in `phase1.jar` to throw an exception
   when `start > stop` per the documentation. Special thanks to OP in
   [Piazza @869](https://piazza.com/class/kjivfwynz9g4zq?cid=869) for pointing it out!
   Student can use `git pull origin main` to get an updated copy of `phase1.jar`
