@@ -80,7 +80,7 @@ command while inside of your project directory.
 * **2021-03-05-FRI:** Updated `OracleStringList` in `phase1.jar` to throw an exception
   when `start > stop` per the documentation. Special thanks to OP in
   [Piazza @869](https://piazza.com/class/kjivfwynz9g4zq?cid=869) for pointing it out!
-  Student can use `git pull origin main` to get an updated copy of `phase1.jar`
+  Students can use `git pull origin main` to get an updated copy of `phase1.jar`
   or use `wget` with [this URL](https://github.com/cs1302uga/cs1302-phased-list/raw/main/phase1.jar).
 
 ## Project Description
