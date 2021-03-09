@@ -408,6 +408,11 @@ made to modify your submission to evaluate other requirements.
   can also check for the presence of this dependency using `jdeps` as described
   in an earlier requirement -- you don't want to see `java.util.Arrays` anywhere
   in the output.
+  
+  **NOTE:** The `System.arraycopy` method is in the `System` class and not
+  `java.util.Arrays`; however, its use is frowned upon for the same reasons
+  that we provide [here](#java-util-Arrays) for the `java.util.Arrays` class.
+  
 
 ### Grading
 
