@@ -83,6 +83,12 @@ command while inside of your project directory.
   Students can use `git pull origin main` to get an updated copy of `phase1.jar`
   or use `wget` with [this URL](https://github.com/cs1302uga/cs1302-phased-list/raw/main/phase1.jar).
 
+* **2021-03-09-TUE:** Updated `OracleStringList` in `phase1.jar` to throw an exception
+  when `start` and `stop` are out of bounds per the documentation. Special thanks to
+  at least two students on Piazza for pointing it out! Students can use
+  `git pull origin main` to get an updated copy of `phase1.jar`
+  or use `wget` with [this URL](https://github.com/cs1302uga/cs1302-phased-list/raw/main/phase1.jar).
+
 ## Project Description
 
 In this project, you will be providing two different implementations of
@@ -408,11 +414,11 @@ made to modify your submission to evaluate other requirements.
   can also check for the presence of this dependency using `jdeps` as described
   in an earlier requirement -- you don't want to see `java.util.Arrays` anywhere
   in the output.
-  
+
   **NOTE:** The `System.arraycopy` method is in the `System` class and not
   `java.util.Arrays`; however, its use is frowned upon for the same reasons
   that we provide [here](#java-util-Arrays) for the `java.util.Arrays` class.
-  
+
 
 ### Grading
 
