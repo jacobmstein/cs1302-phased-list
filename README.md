@@ -594,7 +594,7 @@ of steps that you may need to take to complete the project.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code.
 
-1. Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Friday, Mar 5th).
+1. <a id="tests"/>Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Friday, Mar 5th).
    - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write
      them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
      script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
