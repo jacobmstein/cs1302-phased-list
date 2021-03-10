@@ -15,9 +15,15 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* **FRI 2021-03-12 (Mar 12) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2021-03-13 (Mar 13) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **SUN 2021-03-14 (Mar 14) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* ~~**FRI 2021-03-12 (Mar 12) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
+* ~~**SAT 2021-03-13 (Mar 13) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
+* ~~**SUN 2021-03-14 (Mar 14) @ 11:55 PM EST (`+0` SB Extra Credit)**~~
+
+Due dates have been extended. Please see [Piazza @994](https://piazza.com/class/kjivfwynz9g4zq?cid=994):
+
+* **SUN 2021-03-12 (Mar 14) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **MON 2021-03-13 (Mar 15) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **TUE 2021-03-14 (Mar 16) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
