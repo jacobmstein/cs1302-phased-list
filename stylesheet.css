@@ -145,10 +145,9 @@ sup {
     margin:0;
 }
 .navPadding {
-    padding-top: 107px;
+    padding-top: 0!important;
 }
 .fixedNav {
-    position:fixed;
     width:100%;
     z-index:999;
     background-color:#ffffff;
@@ -918,4 +917,27 @@ figure {
   text-indent: 0;
   margin: auto;
   padding: 0.5em;
+}
+
+.block aside {
+    padding-top: 1em;
+}
+
+.block aside::before {
+    content: "Aside: ";
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+div.description pre.sourceContainer {
+    margin-bottom: -1em;
+}
+
+div.description dl.glossary dd {
+    margin-left: 1em;
+}
+
+.hljs {
+    padding: 1.5em!important;
+    background: none!important;
 }
