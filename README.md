@@ -94,6 +94,15 @@ command while inside of your project directory.
   at least two students on Piazza for pointing it out! Students can use
   `git pull origin main` to get an updated copy of `phase1.jar`
   or use `wget` with [this URL](https://github.com/cs1302uga/cs1302-phased-list/raw/main/phase1.jar).
+  
+* **2021-03-11-THU:** Updated the project deadline options to reflect a two-day
+  extension announced in Please see [Piazza @994](https://piazza.com/class/kjivfwynz9g4zq?cid=994).
+  
+* **2021-03-13-SAT:** Updated the `toString` method in `cs1302.adt.Node` to handle
+  cycles and posted information about a public tester in [Piazza @1066](https://piazza.com/class/kjivfwynz9g4zq?cid=1066). 
+  The old `Node` class should still work fine, but if you want the updated
+  version, then you will need the latest version of `phase1.jar`, which can be 
+  obtained as described in earlier updates.
 
 ## Project Description
 
