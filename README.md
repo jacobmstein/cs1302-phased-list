@@ -535,7 +535,7 @@ then the name of your project directory is likely `cs1302-phased-list`.
 While in your project's parent directory, execute the following command:
 
 ```
-$ check1302 cs1302-phased-list2
+$ check1302 cs1302-phased-list
 ```
 
 If there are style guide violations, then fix them and retest your code! Once
