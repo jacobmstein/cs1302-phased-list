@@ -15,9 +15,9 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* **TUE 2021-10-12 (Oct 12) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **WED 2021-10-13 (Oct 13) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **THU 2021-10-14 (Oct 14) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **THU 2021-10-14 (Oct 14) @ 11:55 PM EST (`+20` SB Extra Credit)**
+* **SAT 2021-10-16 (Oct 16) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **MON 2021-10-18 (Oct 18) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
@@ -126,7 +126,7 @@ contains some suggestions on how to work through the project from start to finis
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the
-highest possible grade is 110 (due to extra credit).
+highest possible grade is 120 (due to extra credit).
 
 ### Functional Requirements
 
@@ -534,7 +534,7 @@ read the entire project description, including the [FAQ](#appendix---faq).
 These steps are suggesions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
-1. Preparation (Suggested Deadline: Wednesday, Mar 3rd):
+1. Preparation (Suggested Deadline: Monday, Oct 4th):
 
    - [ ] Read through the entire project description, including the appendices,
          **and write down questions as you go**.
@@ -544,7 +544,7 @@ of steps that you may need to take to complete the project.
 	   description (which can be reached by clicking on it).
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
-1. Before you write any code (Suggested Deadline: Wednesday, Mar 3rd):
+1. Before you write any code (Suggested Deadline: Monday, October 4th):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
@@ -570,7 +570,7 @@ of steps that you may need to take to complete the project.
 	   start with in the next phase of your development. We'll call these the
 	   independent methods.
 
-1. Prepare to implement the methods (Suggested Deadline: Friday, Mar 5th):
+1. Prepare to implement the methods (Suggested Deadline: Wednesday, October 6th):
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
@@ -585,7 +585,7 @@ of steps that you may need to take to complete the project.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code.
 
-1. <a id="tests"/>Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Friday, Mar 5th).
+1. <a id="tests"/>Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Thursday, Oct 7th).
    - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write
      them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
      script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
@@ -623,7 +623,7 @@ of steps that you may need to take to complete the project.
      of what all of the methods do (and how they do them). The order in which you complete the other methods is up to you. However, we
      recommend completing one of the child classes before continuing with `BaseStringList`.
 
-1. Implement `ArrayStringList` (Suggested Deadline: Sunday, Mar 7th):
+1. Implement `ArrayStringList` (Suggested Deadline: Saturday, Oct 9th):
    - [ ] Write the code for the default constructor. You will likely need to introduce
          instance variables into the class to keep track of object state.
    - [ ] For each of the independent methods you identified earlier, attempt to
@@ -652,7 +652,7 @@ of steps that you may need to take to complete the project.
 	 * not have to go back and fix as many style errors and/or comments; and
 	 * have a better understanding of how your class works.
 
-1. Implement `LinkedStringList` (Suggested Deadline: Tuesday, Mar 9th):
+1. Implement `LinkedStringList` (Suggested Deadline: Monday, Oct 11th):
 
    - [ ] Write the code for the default constructor. You will likely need to introduce
          instance variables into the class to keep track of object state. This
@@ -669,7 +669,7 @@ of steps that you may need to take to complete the project.
 	   you should start to notice how many fewer fixes you're having to make
 	   to keep your code in valid style.
 
-1. Implement `BaseStringList` (Suggested Deadline: Thursday, Mar 11th):
+1. Implement `BaseStringList` (Suggested Deadline: Wednesday, Oct 13th):
    - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
       write the other methods in `BaseStringList`. While writing each method, be sure to use the
       methods you implemented in the children. The beauty of having the abstract parent is that we only have to write
@@ -678,7 +678,7 @@ of steps that you may need to take to complete the project.
       implement its actions.
    - [ ] Test, run `checkstyle`, and commit often while working on these methods.
 
-1. Final Run-through (Suggested Deadline: Friday, Mar 12th):
+1. Final Run-through (Suggested Deadline: Thursday, Oct 14th):
    - [ ] Thoroughly test all of your methods on objects of both `ArrayStringList` and `LinkedStringList`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
