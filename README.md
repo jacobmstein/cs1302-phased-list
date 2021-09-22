@@ -1,11 +1,11 @@
-# CSCI 1302 - Phased List (Phase 1) v2021.sp
+# CSCI 1302 - Phased List (Phase 1) v2021.fa
 
-![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
+![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Fall%202021-blue)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
 This document contains the description for Phase 1 of the List ADT
-project assigned to the students in the Spring 2021 CSCI 1302 classes
+project assigned to the students in the Fall 2021 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -15,15 +15,9 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* ~~**FRI 2021-03-12 (Mar 12) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
-* ~~**SAT 2021-03-13 (Mar 13) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
-* ~~**SUN 2021-03-14 (Mar 14) @ 11:55 PM EST (`+0` SB Extra Credit)**~~
-
-Due dates have been extended. Please see [Piazza @994](https://piazza.com/class/kjivfwynz9g4zq?cid=994):
-
-* **SUN 2021-03-12 (Mar 14) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **MON 2021-03-13 (Mar 15) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **TUE 2021-03-14 (Mar 16) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **TUE 2021-10-12 (Oct 12) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **WED 2021-10-13 (Oct 13) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **THU 2021-10-14 (Oct 14) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
@@ -76,27 +70,8 @@ to the copyright notice and licensing information at the bottom of this document
 
 If there has been an update and you have already cloned the project to Odin,
 then you can update your copy of the project using the <code>$ git pull</code>
-command while inside of your project directory.
-
-* **2021-03-03-THU:** Updated the requirements to
-  [forbid the use of the `java.util.Arrays` class](#no-java-util-arrays).
-  You can still use arrays for your `ArrayStringList` class; however, you may not
-  use the `java.util.Arrays` class or any of its methods.
-
-* **2021-03-09-TUE:** Updated `OracleStringList` in `phase1.jar` to throw an exception
-  when `start` and `stop` are out of bounds per the documentation. Special thanks to
-  at least two students on Piazza for pointing it out! Students can use
-  `git pull origin main` to get an updated copy of `phase1.jar`
-  or use `wget` with [this URL](https://github.com/cs1302uga/cs1302-phased-list/raw/main/phase1.jar).
-  
-* **2021-03-11-THU:** Updated the project deadline options to reflect a two-day
-  extension announced in Please see [Piazza @994](https://piazza.com/class/kjivfwynz9g4zq?cid=994).
-  
-* **2021-03-13-SAT:** Updated the `toString` method in `cs1302.adt.Node` to handle
-  cycles and posted information about a public tester in [Piazza @1066](https://piazza.com/class/kjivfwynz9g4zq?cid=1066). 
-  The old `Node` class should still work fine, but if you want the updated
-  version, then you will need the latest version of `phase1.jar`, which can be 
-  obtained as described in earlier updates.
+command while inside of your project directory. Updates will be listed below as
+they are announced.
 
 ## Project Description
 
