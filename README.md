@@ -544,7 +544,7 @@ of steps that you may need to take to complete the project.
 	   description (which can be reached by clicking on it).
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
-1. Before you write any code (Suggested Deadline: Monday, October 4th):
+1. Before you write any code (Suggested Deadline: Tuesday, October 5th):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
