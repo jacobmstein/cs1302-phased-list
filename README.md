@@ -34,7 +34,7 @@ late penalty does not start applying until after the final date listed.
   * [Non-Functional Requirements](#non-functional-requirements)
   * [Absolute Requirements](#absolute-requirements)
 * [How to Download the Project](#how-to-download-the-project)
-* [ListADT Tester](#listadt-tester)
+* [ListADT Testing](#listadt-testing)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Suggested Checklist](#appendix---suggested-checklist)
 * [Appendix - FAQ](#appendix---faq)
